@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/88/United-states_flag_icon_round.svg">
+    <title>COVID-19 in USA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        footer {
+            text-align: center;
+            margin-top: 1%;
+            margin-bottom: 3%;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .slide {
+            margin-bottom: 40px;
+        }
+        .slide-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .slide-content img, .slide-content iframe {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .slide-content p {
+            margin-bottom: 20px;
+        }
+        .slide-content iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            align-items: center;
+        }
+        .iframe-container {
+            display: flex;
+            width: 100%;
+            gap: 20px; /* Space between iframes */
+        }
+        .iframe-container iframe {
+            width: 50%; /* Each iframe takes up 50% of the container width */
+            height: 800px; /* Adjust this value as needed */
+            border: none;
+        }
+    </style>
+</head>
+
+<header>
+    <h1>🗽 COVID-19 in USA 🦅</h1>
+</header>
+
+<body>
+    <div class="container">
+        <div class="slide">
+            <div class="slide-title"><h2>Overview 🤠</h2></div>
+            <div class="slide-content">
+
+                <h3>Cases and deaths</h3>
+                Variants have been marked with dashed vertical
+                lines indicating the date when a variant was
+                declared a VOC.
+                <iframe src="plots/cases_line.html"></iframe></iframe>
+                <iframe src="plots/deaths_line.html"></iframe></iframe>
+
+                <h3>State and county level choropleths of new daily cases in a month</h3>
+                <iframe src="plots/states_cases_map.html"></iframe></iframe>
+
+                <!-- File is too big to attach to project repo -->
+
+                <!-- students refuses to connect :/ -->
+                <!-- <iframe src="https://students.mimuw.edu.pl/~yp430842/dav/counties_cases_map.html"></iframe></iframe> -->
+
+                <p>Link to <a href="https://students.mimuw.edu.pl/~yp430842/dav/counties_cases_map.html">county-level interactive map</a> for cases</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-title"><h2>Vaccinations 💉</h2></div>
+            <div class="slide-content">
+                <h3>Vaccines and Manufacturers</h3>
+                <iframe src="plots/vaccs_daily.html"></iframe></iframe>
+                <iframe src="plots/vaccs_full.html"></iframe></iframe>
+
+                <iframe src="plots/vaccin_groups.html"></iframe></iframe> 
+
+                <div class="iframe-container">
+                    <iframe src="plots/vaccin_manu_line.html"></iframe></iframe> 
+                    <iframe src="plots/vaccin_manu_bar_anim.html"></iframe></iframe>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-title"><h2>Economy 💵</h2></div>
+            <div class="slide-content">
+                <h3>Unemployment rate</h3>
+                <iframe src="plots/unemployment.html"></iframe></iframe>
+
+                <h3>Consumer product prices</h3>
+                <iframe src="plots/products_cpi.html"></iframe></iframe>
+
+                <h3>The Big Mac Index 🍔</h3>
+                <iframe src="plots/big-mac.html"></iframe></iframe>
+                    
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-title"><h2>Inference 🔮</h2></div>
+            <div class="slide-content">
+                
+                <p>Forecasting with prophet 🧙</p>
+                <iframe src="plots/prophet_cases.html"></iframe></iframe>
+                <iframe src="plots/prophet_deaths.html"></iframe></iframe>
+
+            </div>
+        </div>
+    </div>
+
+<footer>
+    Data source:
+    <a href="https://github.com/owid/covid-19-data">Cases, deaths, vaccinations for whole countries from Our World in Data</a>;
+    <a href="https://github.com/nytimes/covid-19-data">Cases, deaths for states and counties from NY Times</a>;
+    <br>
+    <a href="https://www.bls.gov/data/">Economic data from Bureau of Labor Statistics</a>;
+    <a href="https://data.cdc.gov/Vaccinations/National-Immunization-Survey-Adult-COVID-Module-NI/akkj-j5ru/data">Vaccination by sex and age</a>;
+    <br>
+    Authors: Younginn Park, Maria Nizik
+</footer>
+
+
+</body>
+</html>
